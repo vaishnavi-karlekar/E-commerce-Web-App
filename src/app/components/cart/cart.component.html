@@ -1,0 +1,38 @@
+<ng-container>
+    <div class="container">
+        <div class="card-table">
+            <div class="card-product">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Sr.No</th>
+                            <th>Product Name</th>
+                            <th>Product Image</th>
+                            <th>Description</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Total Amount</th>
+                            <th>Delete</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody *ngFor="let item of products; let i =index">
+                        <tr>
+                            <td>{{i+1}}</td>
+                            <td>{{item.title}}</td>
+                            <td><img style="width: 120px;"src="{{item.image}}"></td>
+                            <td>{{item.description}}</td>
+                            <td>{{item.price | currency:'INR':'symbol'}}</td>
+                            <td>{{item.quantity}}</td>
+                            <td>{{item.total | currency:'INR':'symbol'}}</td>
+                            <td><button class="btn btn-danger" (click)="deleteItem(item)"><i class="fas fa-trash"></i></button></td>
+                        </tr>
+                        
+                    </tbody>
+                    <td colspan="6"></td>
+                    <td><strong >  Gross Total {{grossTotal| currency:'INR':'symbol'}}</strong></td>
+                </table>
+            </div>
+        </div>
+    </div>
+</ng-container>
