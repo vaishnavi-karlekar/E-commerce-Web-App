@@ -22,7 +22,7 @@ import { TestComponent } from './components/test/test.component';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [ProductsService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
